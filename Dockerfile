@@ -89,7 +89,7 @@ RUN pip install -r requirements.txt
 RUN yarn bower
 
 WORKDIR /home/djuser/farnsworth-web
-RUN ./node_modules/.bin/bower install
+RUN yarn bower
 
 COPY --chown=djuser local_settings.py /home/djuser/farnsworth/farnsworth/local_settings.py
 COPY --chown=djuser run.sh /home/djuser
