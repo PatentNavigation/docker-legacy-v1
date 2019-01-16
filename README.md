@@ -7,7 +7,7 @@ authoring server and web app.
 
 * Install [docker](https://docs.docker.com/)
 * Find the latest [release](https://github.com/PatentNavigation/docker-legacy-v1/releases) and download the `.tar.bz2` file
-* Run `bunzip2 < <path to downloaded bz2 file> | docker load`, e.g. `bunzip2 < ~/Downloads/legacy-v1-1.1.bz2 | docker load`
+* Run `bunzip2 < <path to downloaded bz2 file> | docker load`, e.g. `bunzip2 < ~/Downloads/legacy-v1-1.2.bz2 | docker load`
 
 ## Running
 
@@ -28,7 +28,7 @@ $ docker run -e DB_PASSWORD='<password>' -e AWS_ACCESS_KEY_ID=<AWS key id> -e AW
 ```
 
 where `<image>` is `legacy-v1` or `legacy-v1:<release version>` (e.g.
-`legacy-v1:1.1`) if you followed the `Installing` instructions above.
+`legacy-v1:1.2`) if you followed the `Installing` instructions above.
 
 The visit `http://<org-domain>.localhost:8005/signin/` to log in,
 `http://<org-domain>.localhost:4705/home` to go to the home screen, or
