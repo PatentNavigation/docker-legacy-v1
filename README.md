@@ -34,7 +34,7 @@ The visit `http://<org-domain>.localhost:8005/signin/` to log in,
 `http://<org-domain>.localhost:4705/home` to go to the home screen, or
 `http://<org-domain>.localhost:4205` to go to the v1 authoring inbox.
 
-## Building
+## Building & publishing
 
 In general you should not need to build the the docker image yourself. Instead,
 follow the instructions in the `Installing` section above
@@ -44,5 +44,15 @@ the docker image, you need to supply an SSH private key that grants git+ssh
 access to those repositories. So, building should be done something like
 
 ```
-$ docker build . --build-arg SSH_PRIVATE_KEY="`cat ~/.ssh/id_rsa`"
+$ docker build . --build-arg SSH_PRIVATE_KEY="`cat ~/.ssh/id_rsa`" -t legacy-v1:<tag>
 ```
+
+where <tag> should match the release tag, e.g. "1.3". To create a bz2
+file containing the image, run
+  
+```
+$ docker save legacy-v1:<tag> | bzip2 > legacy-v1-<tag>.tar.bz2
+```
+
+This image should be attached as an asset to the corresponding release/tag in
+this repo.
